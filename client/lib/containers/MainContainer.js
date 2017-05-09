@@ -8,6 +8,10 @@ import Header from '../components/Header';
 
 class MainContainer extends React.Component {
 
+    componentWillMount() {
+        this.props.baseActions.someAction();
+    }
+
     render() {
         return (
             <div className="sa-main-container">

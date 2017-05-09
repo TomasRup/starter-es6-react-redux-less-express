@@ -1,4 +1,5 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
+import injectMiddleware from 'redux-inject';
 import thunkMiddleware from 'redux-thunk';
 
 import baseActions from './base/actions';
@@ -15,7 +16,12 @@ const rootStore = combineReducers({
 
 const setupStore = store => createStore(
     store,
-    applyMiddleware(thunkMiddleware)
+    applyMiddleware(
+        injectMiddleware({
+            test: 'ha'
+        }),
+        thunkMiddleware
+    )
 );
 
 export default {

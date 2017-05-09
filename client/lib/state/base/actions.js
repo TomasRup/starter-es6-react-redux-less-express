@@ -4,7 +4,8 @@ import actionTypes from '../actionTypes';
 import utils from '../utils';
 
 
-const someAction = () => {
+const someAction = () => injected => {
+    console.log("Testing injected", injected.test);
     return (dispatch, getState) => {
         return utils
             .apiGet('/api/feature1')
